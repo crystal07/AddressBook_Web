@@ -63,7 +63,7 @@
 	if(total==0) {
 %>
 	 <tr align="center" bgcolor="#FFFFFF" height="30">
-	 <td colspan="6">등록된 전화번호가 없습니다.</td>
+	 <td colspan="6">No Data</td>
 	 </tr>
 <%
 	 }
@@ -72,6 +72,9 @@
 			name = rs.getString(1);
 			phone = rs.getString(2);	
 %>
+	<script language="javascript">
+		alert("name is <%=name%> phone is <%=phone%>");
+	</script>
 	<tr height="25" align="center">
 	<td align="left"><img src="img/1494942949_profile.png" /></td>
 	<td align="center"><%=name %></td>
@@ -95,7 +98,7 @@
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr><td colspan="4" height="5"></td></tr>
   <tr align="center">
-   <td><input type=button value="add"></td>
+   <td><input type=button value="add" OnClick="javascript:location.href='./add_address_book.jsp'"></td>
    <td><input type=button value="delete"></td>
   </tr>
 </table>

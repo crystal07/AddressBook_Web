@@ -7,7 +7,7 @@
 <title>Address Book</title>
 </head>
 <body>
-	<P> 이 서비스는 주소록을 제공하는 서비스입니다. 전화, 문자 등의 부가적 기능들도 포함합니다. </P>>
+	<P> 이 서비스는 주소록을 제공하는 서비스입니다. 전화, 문자 등의 부가적 기능들도 포함합니다. </P>
 	<img src="img/diary-2090420_1920.jpg" width="700" height="500">
 	<div id="button">
 		<a href="address_book/address_book.jsp">

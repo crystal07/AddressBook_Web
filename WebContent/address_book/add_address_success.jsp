@@ -24,7 +24,7 @@
 	String email = request.getParameter("email");
 	if (email != null && email.length()<0) email="null";
 	String memo = request.getParameter("memo");
-	if (memo != null && memo.length()<0) memo="null";
+	if (memo != null && memo.length()<0) memo="null"; 
 	
 	try {	
 		Connection conn = DriverManager.getConnection(url,id,pass);
@@ -41,15 +41,17 @@
 		pstmt.close();
 		
 		conn.close();
+		%>
+		<script language=javascript>
+   	self.window.alert("success");
+   	location.href="address_book.jsp"; 
+	</script>
+		<%
 } catch(SQLException e) {
 	out.println( e.toString() );
 	} 
 
 %>
-<script language=javascript>
-   self.window.alert("success");
-   location.href="address_book.jsp"; 
-</script>
 
 </body>
 </html>

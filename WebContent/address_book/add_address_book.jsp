@@ -1,16 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<script language = "javascript"> 
-function writeCheck() { 
+<script language = "javascript">
+function writeCheck() {
 	var form = document.writeform;
-	if( !form.name.value ) // form 에 있는 name 값이 없을 때 {
-		alert( "input name" ); // 경고창 띄움
-		form.name.focus(); // form 에 있는 name 위치로 이동
+	if (!form.name.value) {
+		alert("input name");
+		form.name.focus();
 		return;
 	}
-	if( !form.phone.value ) {
-		alert( "input phone number" );
+	if (!form.phone.value) {
+		alert("input number");
 		form.phone.focus();
 		return;
 	}
@@ -33,7 +33,7 @@ function writeCheck() {
 		<table width="100%" cellpadding="0" cellspacing="0" border="0">
 			<tr style="background:url('img/table_mid.gif') repeat-x; text-align:center;">
 			<td width="5"><img src="img/table_left.gif" width="5" height="30" /></td>
-			<td></td>
+			<td>add address</td>
 			<td width="5"><img src="img/table_right.gif" width="5" height="30" /></td>
 			</tr>
 		</table>
@@ -79,8 +79,9 @@ function writeCheck() {
 			</tr>
 			<tr align="center">
 				<td>&nbsp;</td>
-				<td colspan="2">
+				<td colspan="3">
 					<input type=button value="submit" OnClick="javascript:writeCheck();">
+					<input type=button value="test" OnClick="javascript:alert('button works');">
 					<input type=button value="cancel" OnClick="javascript:history.back(-1)">
 				<td>&nbsp;</td>
 			</tr>
@@ -88,6 +89,6 @@ function writeCheck() {
 		</td>
 	</tr>
 	</form>
-	</table>>
+	</table>
 </body>
 </html>
