@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*"%> 
-
+<%@ page import="java.sql.*" %>
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -16,20 +16,21 @@
 	String url = "jdbc:mysql://localhost:3306/address_book"; //아이피주소와 port와 DB명을 입력합니다.
 	String id = "root"; // DB USER명
 	String pass = "addressbook123"; // DB 비밀번호
-
+	
+	int index = Integer.parseInt(request.getParameter("index"));
 	String name = request.getParameter("name");
 	String phone = request.getParameter("phone");
 	String organization = request.getParameter("organization");
-	if (organization != null && organization.length()<0) organization="null";
 	String email = request.getParameter("email");
-	if (email != null && email.length()<0) email="null";
 	String memo = request.getParameter("memo");
-	if (memo != null && memo.length()<0) memo="null";
 	String image = request.getParameter("image");
 	if (image != null && image.length()<0) image="1494942949_profile.png";
 	
 	try {	
 		Connection conn = DriverManager.getConnection(url,id,pass);
+		String delete = "DELETE FROM address WHERE id = "+index;
+		Statement stmt = conn.createStatement();
+		stmt.executeUpdate(delete);
 		String sql = "INSERT INTO address(name, phone, organization, email, memo, image) VALUES(?,?,?,?,?,?)";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		
@@ -55,6 +56,5 @@
 	} 
 
 %>
-
 </body>
 </html>

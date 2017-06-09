@@ -11,9 +11,10 @@
 <body>
 
 <%!
+	int index=-1;
 	String name=null;
 	String phone=null;
-	String img=null;
+	String image=null;
 	String organization=null;
 	String email=null;
 	String memo=null;
@@ -24,7 +25,6 @@
 	String sqlCount;
 	ResultSet rs=null;
 %>
-
 <%
  	Class.forName("com.mysql.jdbc.Driver");
 	String url = "jdbc:mysql://localhost:3306/address_book"; //아이피주소와 port와 DB명을 입력합니다.
@@ -54,8 +54,9 @@
   <tr height="5"><td width="5"></td></tr>
   <tr style="background:url('img/table_mid.gif') repeat-x; text-align:center;">
    <td width="5"><img src="img/table_left.gif" width="5" height="30" /></td>
-   <td width="73">received</td>
+   <td width="50">received</td>
    <td width="379">name</td>
+   <td width="379">phone</td>
    <td width="73">information</td>
    <td width="7"><img src="img/table_right.gif" width="5" height="30" /></td>
   </tr>
@@ -69,16 +70,30 @@
 	 }
 	 else {	
 		while(rs.next()) {
-			name = rs.getString(1);
-			phone = rs.getString(2);	
+			index = rs.getInt(1);
+			name = rs.getString(2);
+			phone = rs.getString(3);
+			organization = rs.getString(4);
+			image = rs.getString(7);
 %>
-	<script language="javascript">
-		alert("name is <%=name%> phone is <%=phone%>");
-	</script>
+
 	<tr height="25" align="center">
-	<td align="left"><img src="img/1494942949_profile.png" /></td>
+	<td align="left"><img src="img/<%=image %>" />image</td>
+	<%
+	if (organization.length()>0) {
+	%>
+	<td align="center"><%=name %><h6>(<%=organization %></h6></td>
+	<%
+	}
+	else {
+	%> 
 	<td align="center"><%=name %></td>
-	<td align="right">information</td>
+	<%
+	}
+	%>
+	<td align="center"><%=phone%></td>
+	<td align="center"><a href="show_address.jsp?index=<%=index%>">information</a></td>
+	<td align="right"><a href="delete_address_success.jsp?index=<%=index%>">delete</a></td>
 	<td>&nbsp;</td>
 	</tr>
  	<tr height="1" bgcolor="#D2D2D2"><td colspan="6"></td></tr>
@@ -88,8 +103,9 @@
 	rs.close();
 	stmt.close();
 	conn.close();
-} catch(SQLException e) {
-	out.println( e.toString() );
+}
+catch(SQLException e) {
+
 }
 %>
  <tr height="1" bgcolor="#82B5DF"><td colspan="6" width="752"></td></tr>
@@ -98,8 +114,8 @@
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr><td colspan="4" height="5"></td></tr>
   <tr align="center">
-   <td><input type=button value="add" OnClick="javascript:location.href='./add_address_book.jsp'"></td>
-   <td><input type=button value="delete"></td>
+   <td><input type=button value="add" OnClick="javascript:location.href='add_address.jsp'"></td>
+   <td><input type=button value="delete" OnClick="window.location='delete_selected_address.jsp?index=<%=index%>"></td>
   </tr>
 </table>
 

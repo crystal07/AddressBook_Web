@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*" %>
 
 <script language = "javascript">
 function writeCheck() {
@@ -14,6 +15,7 @@ function writeCheck() {
 		form.phone.focus();
 		return;
 	}
+
 	form.submit();
 }
 </script>
@@ -32,13 +34,20 @@ function writeCheck() {
 		<td>
 		<table width="100%" cellpadding="0" cellspacing="0" border="0">
 			<tr style="background:url('img/table_mid.gif') repeat-x; text-align:center;">
-			<td width="5"><img src="img/table_left.gif" width="5" height="30" /></td>
+			<td width="5"><img src="./img/table_left.gif" width="5" height="30" /></td>
 			<td>add address</td>
-			<td width="5"><img src="img/table_right.gif" width="5" height="30" /></td>
+			<td width="5"><img src="./img/table_right.gif" width="5" height="30" /></td>
 			</tr>
 		</table>
 		
 		<table>
+			<tr>
+				<td>&nbsp;</td>
+				<td align="center">image</td>
+				<td><input name="image" size="50" maxlength="100"></td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr height="1" bgcolor="#dddddd"><td colspan="4"></td></tr>
 			<tr>
 				<td>&nbsp;</td>
 				<td align="center">name</td>
@@ -63,9 +72,10 @@ function writeCheck() {
 			<tr>
 				<td>&nbsp;</td>
 				<td align="center">e-mail</td>
-				<td><textarea name="email" cols="50" rows="13"></textarea></td>
+				<td><input name="e-mail" size="50" maxlength="50"></td>
 				<td>&nbsp;</td>
 			</tr>
+			<tr height="1" bgcolor="#dddddd"><td colspan="4"></td></tr>
 			<tr>
 				<td>&nbsp;</td>
 				<td align="center">memo</td>
@@ -79,9 +89,8 @@ function writeCheck() {
 			</tr>
 			<tr align="center">
 				<td>&nbsp;</td>
-				<td colspan="3">
+				<td colspan="2">
 					<input type=button value="submit" OnClick="javascript:writeCheck();">
-					<input type=button value="test" OnClick="javascript:alert('button works');">
 					<input type=button value="cancel" OnClick="javascript:history.back(-1)">
 				<td>&nbsp;</td>
 			</tr>
