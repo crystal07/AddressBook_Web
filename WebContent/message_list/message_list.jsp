@@ -81,7 +81,7 @@
 %>
 
 	<tr height="25" align="center">
-	<td align="center"><img src="../img/" height="50" width="50"/></td>
+	<td align="center"><img src="../img/1495000097_313-Email_Arrow_Right.png" height="50" width="50"/></td>
 	<%
 			address_query = "SELECT * FROM address WHERE PHONE = "+receiver;
 			address_result = st.executeQuery(address_query);
@@ -110,6 +110,7 @@
 	<td align="center"><%=time %></td>
 	<td align="center"><a href="../call_list/call.jsp?phone=<%=receiver%>&received=1">call</a></td>
 	<td align="center"><a href="send_message.jsp?phone=<%=receiver %>&received=1">message</a></td>
+	<td align="center"><a href="show_message_list_by_phone.jsp?phone=<%=receiver %>">show</a></td>
 	<td align="center"><a href="../address_book/show_address.jsp?index=<%=index%>">information</a></td>
 	<td align="center"><a href="delete_message_list_success.jsp?index=<%=index%>">delete</a></td>
 	<td>&nbsp;</td>

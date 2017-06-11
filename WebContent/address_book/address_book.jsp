@@ -79,7 +79,7 @@
 %>
 
 	<tr height="25" align="center">
-	<td align="left"><img src="../img/<%=image %>" />image</td>
+	<td align="left"><img src="../img/<%=image %>" height=50 length=50/></td>
 	<%
 	if (organization.length()>0) {
 	%>

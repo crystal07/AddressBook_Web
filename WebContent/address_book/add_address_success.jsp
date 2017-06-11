@@ -25,8 +25,8 @@
 	if (email != null && email.length()<0) email="null";
 	String memo = request.getParameter("memo");
 	if (memo != null && memo.length()<0) memo="null";
-	String image = request.getParameter("image");
-	if (image != null && image.length()<0) image="1494942949_profile.png";
+	String image = request.getParameter("image").toString();
+	if (image != null || image.length()<0) image="1494942955_user.png";
 	
 	try {	
 		Connection conn = DriverManager.getConnection(url,id,pass);
