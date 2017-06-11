@@ -43,7 +43,7 @@
 		%>
 	<script language=javascript>
    	self.window.alert("success");
-   	history.back(-1); 
+   	history.go(-2); 
 	</script>
 		<%
 } catch(SQLException e) {

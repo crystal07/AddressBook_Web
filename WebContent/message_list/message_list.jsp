@@ -9,6 +9,16 @@
 <title>Message</title>
 </head>
 <body>
+<table>
+  <tr style="background:url('../img/table_mid.gif') repeat-x; text-align:center;">
+    <td width="5"><img src="../img/table_left.gif" width="5" height="30" /></td>  
+	<td align="left" width="40%"><img src="../img/1494968790_book.png" width="50" height="30"/>Address Book</td>
+	<td align="center" width="20%"><a href="../address_book/address_book.jsp">Address</a></td>
+	<td align="center" width="20%"><a href="../call_list/call_list.jsp">Call</a></td>
+	<td align="center" width="20%"><a href="../message_list/message_list.jsp">Message</a></td>
+	<td width="5"><img src="../img/table_right.gif" width="5" height="30" /></td>
+  </tr>
+</table>
 <%!
 	int index=-1;
 	String name=null;
@@ -57,11 +67,11 @@
   <tr height="5"><td width="5"></td></tr>
   <tr style="background:url('../img/table_mid.gif') repeat-x; text-align:center;">
    <td width="5"><img src="../img/table_left.gif" width="5" height="30" /></td>
-   <td width="50">received</td>
-   <td width="379">name</td>
-   <td width="379">content</td>
-   <td width="73">information</td>
-   <td width="7"><img src="../img/table_right.gif" width="5" height="30" /></td>
+   <td width="5%">&nbsp;</td>
+   <td width="15%">name</td>
+   <td width="45%">content</td>
+   <td width="35%">&nbsp;</td>
+   <td width="5"><img src="../img/table_right.gif" width="5" height="30" /></td>
   </tr>
 <%
 	if(total==0) {
@@ -91,28 +101,29 @@
 				name = address_result.getString(2);
 				if (organization.length()>0) {
 	%>
-					<td align="center"><%=name %><h6>(<%=organization %>)</h6></td>
+					<td align="center" width="15%"><%=name %> (<%=organization %>)</td>
 	<%
 				}
 				else {
 	%> 
-					<td align="center"><%=name %></td>
+					<td align="center" width="15%"><%=name %></td>
 	<%
 				}
 			}
 			else {
 	%>
-				<td align="center"><%=receiver%></td>
+				<td align="center" width="15%"><%=receiver%></td>
 	<%
 			}
 
 	%>
-	<td align="center"><%=time %></td>
-	<td align="center"><a href="../call_list/call.jsp?phone=<%=receiver%>&received=1">call</a></td>
-	<td align="center"><a href="send_message.jsp?phone=<%=receiver %>&received=1">message</a></td>
-	<td align="center"><a href="show_message_list_by_phone.jsp?phone=<%=receiver %>">show</a></td>
-	<td align="center"><a href="../address_book/show_address.jsp?index=<%=index%>">information</a></td>
-	<td align="center"><a href="delete_message_list_success.jsp?index=<%=index%>">delete</a></td>
+	<td align="center" width="45%"><%=content %></td>
+	<td align="right" width="35%"><a href="../address_book/show_address.jsp?phone=<%=receiver %>"><img src="../img/1494942926_General_-_Office_37.png" width="50" height="50"/></a>
+	<a href="../call_list/call.jsp?phone=<%=receiver %>&received=1"><img src="../img/1494953831_5302_-_Whatsapp.png" width="50" height="50"/></a>
+	<a href="../message_list/send_message.jsp?phone=<%=receiver %>"><img src= "../img/1494953845_5368_-_Wechat.png" width="50" height="50"/></a>
+	<a href="show_message_list_by_phone.jsp?phone=<%=receiver %>"><img src="../img/1497219653_letter.png" width="50" height="50" /></a>
+	<a href="delete_message_list_success.jsp?index=<%=index%>"><img src = "../img/1497219415_ic_delete_48px.png" width="50" height="50"/></a></td>
+	
 	<td>&nbsp;</td>
 	</tr>
 
