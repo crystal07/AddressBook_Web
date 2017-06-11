@@ -22,10 +22,11 @@
 	Statement stmt=null;
 	String sqlCount;
 	ResultSet rs=null;
+	String received="1";
 %>
 
 <%
-	index = Integer.parseInt(request.getParameter("index"));
+	phone = request.getParameter("phone").toString();
 
  	Class.forName("com.mysql.jdbc.Driver");
 	String url = "jdbc:mysql://localhost:3306/address_book"; //아이피주소와 port와 DB명을 입력합니다.
@@ -39,7 +40,7 @@
 		conn = DriverManager.getConnection(url,id,pass);
 		stmt = conn.createStatement();
 
-		sqlCount = "SELECT * FROM address WHERE id="+index;
+		sqlCount = "SELECT * FROM address WHERE phone="+phone;
 		rs = stmt.executeQuery(sqlCount);
 		
 		if (rs.next()) {
@@ -55,6 +56,7 @@
 			%>
 			<script language="javascript">
 				alert("Not Found");
+				history.back(-1);
 			</script>
 			<%
 		} 
@@ -68,6 +70,7 @@
 		%>
 		<script language="javascript">
 			alert("Not Found");
+			history.back(-1);
 		</script>
 		
 		<% 
@@ -81,8 +84,8 @@ Phone number is <%=phone %>
   <tr align="center">
    <td><input type=button value="edit" OnClick="javascript:location.href='edit_address.jsp?index=<%=index%>'"></td>
    <td><input type=button value="delete" OnClick="window.location='delete_address_success.jsp?index=<%=index%>'"></td>
-   <td><input type=button value="call" OnClick="window.location='call.jsp?index=<%=index %>'"></td>
-   <td><input type=button value="message" OnClick="window.location='send_message.jsp?index=<%=index %>'"></td>
+   <td><input type=button value="call" OnClick="window.location='../call_list/call.jsp?received=<%=received %>&phone=<%=phone%>'"></td>
+   <td><input type=button value="message" OnClick="window.location='../message_list/send_message.jsp?received=<%=received %>&phone=<%=phone%>'"></td>
   </tr>
 </table>
 

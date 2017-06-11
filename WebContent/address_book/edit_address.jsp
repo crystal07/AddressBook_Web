@@ -94,7 +94,7 @@ function writeCheck() {
 			<tr>
 				<td>&nbsp;</td>
 				<td align="center">image</td>
-				<td><input name="image" size="50" maxlength="100" value="image"></td>
+				<td><input name="image" size="50" maxlength="100" value="1494942949_profile.png"></td>
 				<td>&nbsp;</td>
 			</tr>
 			<tr height="1" bgcolor="#dddddd"><td colspan="4"></td></tr>

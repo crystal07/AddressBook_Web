@@ -38,6 +38,7 @@
 		conn = DriverManager.getConnection(url,id,pass);
 		stmt = conn.createStatement();
 
+		
 		sqlCount = "SELECT id FROM address";
 		rs = stmt.executeQuery(sqlCount);
 		
@@ -46,19 +47,19 @@
 		}
 		rs.close();
 		
-		String sqlList = "SELECT * FROM address";
+		String sqlList = "SELECT * FROM address ORDER BY name ASC, phone ASC";
 		rs = stmt.executeQuery(sqlList);	
 %>
 
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr height="5"><td width="5"></td></tr>
-  <tr style="background:url('img/table_mid.gif') repeat-x; text-align:center;">
-   <td width="5"><img src="img/table_left.gif" width="5" height="30" /></td>
+  <tr style="background:url('../img/table_mid.gif') repeat-x; text-align:center;">
+   <td width="5"><img src="../img/table_left.gif" width="5" height="30" /></td>
    <td width="50">received</td>
    <td width="379">name</td>
    <td width="379">phone</td>
    <td width="73">information</td>
-   <td width="7"><img src="img/table_right.gif" width="5" height="30" /></td>
+   <td width="7"><img src="../img/table_right.gif" width="5" height="30" /></td>
   </tr>
 <%
 	if(total==0) {
@@ -78,7 +79,7 @@
 %>
 
 	<tr height="25" align="center">
-	<td align="left"><img src="img/<%=image %>" />image</td>
+	<td align="left"><img src="../img/<%=image %>" />image</td>
 	<%
 	if (organization.length()>0) {
 	%>
@@ -92,7 +93,7 @@
 	}
 	%>
 	<td align="center"><%=phone%></td>
-	<td align="center"><a href="show_address.jsp?index=<%=index%>">information</a></td>
+	<td align="center"><a href="show_address.jsp?phone=<%=phone%>">information</a></td>
 	<td align="right"><a href="delete_address_success.jsp?index=<%=index%>">delete</a></td>
 	<td>&nbsp;</td>
 	</tr>
@@ -105,7 +106,7 @@
 	conn.close();
 }
 catch(SQLException e) {
-
+	out.print(e.toString());
 }
 %>
  <tr height="1" bgcolor="#82B5DF"><td colspan="6" width="752"></td></tr>
@@ -115,6 +116,7 @@ catch(SQLException e) {
   <tr><td colspan="4" height="5"></td></tr>
   <tr align="center">
    <td><input type=button value="add" OnClick="javascript:location.href='add_address.jsp'"></td>
+   <td><input type=button value="popup" OnClick="window.open('./add_address.jsp', 'add address', 'length=100, height=50')">
    <td><input type=button value="delete" OnClick="window.location='delete_selected_address.jsp?index=<%=index%>"></td>
   </tr>
 </table>

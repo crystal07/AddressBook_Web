@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*" %>
-
+    <%@ page import="java.sql.*" %>
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Call</title>
+<title>Message</title>
 </head>
 <body>
 <%
@@ -16,28 +16,25 @@
 	String url = "jdbc:mysql://localhost:3306/address_book"; //아이피주소와 port와 DB명을 입력합니다.
 	String id = "root"; // DB USER명
 	String pass = "addressbook123"; // DB 비밀번호
-
-	String phone = request.getParameter("phone");
-	int received = Integer.parseInt(request.getParameter("received"));
 	
-	String image = request.getParameter("image");
-	if (image != null && image.length()<0) image="1494942949_profile.png";
+	String receiver = request.getParameter("receiver").toString();
+	String sender = request.getParameter("sender").toString();
+	String cont = request.getParameter("content").toString();
 	
 	try {	
 		Connection conn = DriverManager.getConnection(url,id,pass);
-		String sql = "INSERT INTO callList(received, phone, time) VALUES(?,?,?)";
+		String sql = "INSERT INTO message(receiver, sender, content, time) VALUES(?,?,?,?)";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
-		if (received==1) {
-			pstmt.setString(1, "1495000013_speakin_tube_down.png");
-		}
-		else {
-			pstmt.setString(1, "1495001619_speakin_tube_up.png");
-		}
-		pstmt.setString(2, phone);
+
+		pstmt.setString(1, receiver);
+
+		pstmt.setString(2, sender);
+		
+		pstmt.setString(3, cont);
 		java.util.Date date = new java.util.Date();
 		String date_string = date.toString();
 		
-		pstmt.setString(3, date_string);
+		pstmt.setString(4, date_string);
 
 		pstmt.execute();
 		pstmt.close();
@@ -54,6 +51,5 @@
 	} 
 
 %>
-
 </body>
 </html>
