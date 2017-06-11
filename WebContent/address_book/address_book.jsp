@@ -75,6 +75,13 @@ function writeCheck() {
 %>
 
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr><td colspan="4" height="5"></td></tr>
+  <tr align="right">
+   <td><input type=image value="add" img src="../img/1494942925_add_group.png" OnClick="javascript:location.href='add_address.jsp'" width="50" height="50"></td>
+  </tr>
+</table>
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr height="5"><td width="5"></td></tr>
   <tr style="background:url('../img/table_mid.gif') repeat-x; text-align:center;">
    <td width="5"><img src="../img/table_left.gif" width="5" height="30" /></td>
@@ -143,12 +150,11 @@ catch(SQLException e) {
 		<td>
 		<table style="margin-left: auto; margin-right: auto;">
 			<tr>
-				<td align="center"><img src="../img/1495006158_Searchicons-search-people2.png" width="30" height="30"/></td>
 				<td align="center"><select name="object">
 					<option value="name" selected="selected">name</option>
 					<option value="phone">phone number</option>
 				</select><input name="keyword" size="75%" maxlength="100"></td>
-				<td align="center"><input type="button" value="search" OnClick="javascript:writeCheck()"></td>
+				<td align="center"><input type="image" img src="../img/1495006158_Searchicons-search-people2.png" value="search" width=30 height=30 OnClick="javascript:writeCheck()"></td>
 			</tr>
 		</table>
 		</td>
@@ -156,13 +162,7 @@ catch(SQLException e) {
 	</form>
 </table>
 
-<table width="100%" cellpadding="0" cellspacing="0" border="0">
-  <tr><td colspan="4" height="5"></td></tr>
-  <tr align="center">
-   <td><input type=button value="add" OnClick="javascript:location.href='add_address.jsp'"></td>
-   <td><input type=button value="delete" OnClick="window.location='delete_selected_address.jsp?index=<%=index%>"></td>
-  </tr>
-</table>
+
 
 </body>
 </html>

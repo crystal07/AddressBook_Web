@@ -20,11 +20,8 @@
 	String name = request.getParameter("name");
 	String phone = request.getParameter("phone");
 	String organization = request.getParameter("organization");
-	if (organization != null && organization.length()<0) organization="null";
 	String email = request.getParameter("email");
-	if (email != null && email.length()<0) email="null";
 	String memo = request.getParameter("memo");
-	if (memo != null && memo.length()<0) memo="null";
 	String image = request.getParameter("image").toString();
 	if (image != null || image.length()<0) image="1494942955_user.png";
 	

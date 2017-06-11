@@ -78,15 +78,71 @@
 	}
 %>
 
-name is <%=name %>
-Phone number is <%=phone %>
+<table>
+  <tr>
+   <td>
+    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+     <tr style="background:url('../img/table_mid.gif') repeat-x; text-align:center;">
+      <td width="5"><img src="../img/table_left.gif" width="5" height="30" /></td>
+      <td>Address Information</td>
+      <td width="5"><img src="../img/table_right.gif" width="5" height="30" /></td>
+     </tr>
+    </table>
+   <table width="100%">
+     <tr>
+      <td width="0">&nbsp;</td>
+      <td align="center" width="75"></td>
+      <td width="50%" height="40%"><img src="../img/<%=image %>"></td>
+      <td width="0">&nbsp;</td>
+     </tr>
+	 <tr height="1" bgcolor="#dddddd"><td colspan="4" width="407"></td></tr>
+    <tr>
+      <td width="0">&nbsp;</td>
+      <td align="left" width="76">name</td>
+      <td width="30%"><%=name %></td>
+      <td width="0">&nbsp;</td>
+     </tr>
+	 <tr height="1" bgcolor="#dddddd"><td colspan="4" width="407"></td></tr>
+    <tr>
+      <td width="0">&nbsp;</td>
+      <td align="left" width="76">organization</td>
+      <td width="30%"><%=organization %></td>
+      <td width="0">&nbsp;</td>
+     </tr>
+     <tr height="1" bgcolor="#dddddd"><td colspan="4" width="407"></td></tr>
+    <tr>
+      <td width="0">&nbsp;</td>
+      <td align="left" width="76">phone</td>
+      <td width="30%"><%=phone %></td>
+      <td width="0">&nbsp;</td>
+     </tr>
+      <tr height="1" bgcolor="#dddddd"><td colspan="4" width="407"></td></tr>
+    <tr>
+      <td width="0">&nbsp;</td>
+      <td align="left" width="76">e-mail</td>
+      <td width="30%"><%=email %></td>
+      <td width="0">&nbsp;</td>
+     </tr>
+     <tr height="1" bgcolor="#dddddd"><td colspan="4" width="407"></td></tr>
+     <tr>
+      <td width="90%" colspan="2" height="300"><%=memo %></td>
+     </tr>
+     <tr height="1" bgcolor="#dddddd"><td colspan="4" width="407"></td></tr>
+     <tr height="1" bgcolor="#82B5DF"><td colspan="4" width="407"></td></tr>
+
+    </table>
+   </td>
+  </tr>
+ </table>
+
+
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr><td colspan="4" height="5"></td></tr>
-  <tr align="center">
-   <td><input type=button value="edit" OnClick="javascript:location.href='edit_address.jsp?index=<%=index%>'"></td>
-   <td><input type=button value="delete" OnClick="window.location='delete_address_success.jsp?index=<%=index%>'"></td>
-   <td><input type=button value="call" OnClick="window.location='../call_list/call.jsp?received=<%=received %>&phone=<%=phone%>'"></td>
-   <td><input type=button value="message" OnClick="window.location='../message_list/send_message.jsp?received=<%=received %>&phone=<%=phone%>'"></td>
+  <tr align="left">
+   <td align="left"><input type=image img src="../img/1497225458_user_profile_edit.png" width=75 height=75 value="edit" OnClick="javascript:location.href='edit_address.jsp?index=<%=index%>'">
+   <input type=image img src="../img/1494942932_General_-_Office_36.png" width=75 height=75 value="delete" OnClick="window.location='delete_address_success.jsp?index=<%=index%>'">
+   <input type=image img src="../img/1494953831_5302_-_Whatsapp.png.png" width=75 height=75 value="call" OnClick="window.location='../call_list/call.jsp?received=<%=received %>&phone=<%=phone%>'">
+   <input type=image img src="../img/1494953845_5368_-_Wechat.png" width=75 height=75 value="message" OnClick="window.location='../message_list/send_message.jsp?received=<%=received %>&phone=<%=phone%>'"></td>
   </tr>
 </table>
 
