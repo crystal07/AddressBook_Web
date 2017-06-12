@@ -29,6 +29,7 @@
 	String url = "jdbc:mysql://localhost:3306/address_book"; //아이피주소와 port와 DB명을 입력합니다.
 	String id = "root"; // DB USER명
 	String pass = "addressbook123"; // DB 비밀번호
+	index = Integer.parseInt(request.getParameter("index"));
 	conn = DriverManager.getConnection(url,id,pass);
 
 	total = 0;
@@ -37,7 +38,7 @@
 		conn = DriverManager.getConnection(url,id,pass);
 		stmt = conn.createStatement();
 
-		sql = "DELETE FROM message";
+		sql = "DELETE FROM message WHERE id = "+index;
 		stmt.executeUpdate(sql);
 	
 		stmt.close();

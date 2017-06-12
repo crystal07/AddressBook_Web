@@ -15,7 +15,7 @@ function writeCheck() {
 		return;
 	}
 	form.submit();
-}
+	}
 </script>
 <html>
 <head>

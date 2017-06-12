@@ -99,7 +99,7 @@
 	<%
 	if (organization.length()>0) {
 	%>
-	<td align="center" width="15%"><%=name %> (<%=organization %></td>
+	<td align="center" width="15%"><%=name %> (<%=organization %>)</td>
 	<%
 	}
 	else {

@@ -157,11 +157,11 @@ catch(SQLException e) {
  <tr height="1" bgcolor="#82B5DF"><td colspan="6" width="752"></td></tr>
  </table>
  
-<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-left: auot; margin-right: auto;">
   <tr><td colspan="4" height="5"></td></tr>
   <tr align="center">
    <td><input type=button value="add" OnClick="javascript:location.href='send_message.jsp?phone=<%=receiver %>&received=-1'"></td>
-   <td><input type=button value="delete" OnClick="window.location='delete_selected_address.jsp?index=<%=index%>"></td>
+   <td><input type=button value="back" OnClick="javascript:history.back()"></td>
   </tr>
 </table>
 </body>

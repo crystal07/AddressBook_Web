@@ -6,11 +6,7 @@
 <script language = "javascript">
 function writeCheck() {
 	var form = document.writeform;
-	if (!form.keyword.value) {
-		alert("input keyword searched");
-		form.name.focus();
-		return;
-	}
+
 	
 	form.submit();
 }
@@ -73,13 +69,6 @@ function writeCheck() {
 		String sqlList = "SELECT * FROM address ORDER BY name ASC, phone ASC";
 		rs = stmt.executeQuery(sqlList);	
 %>
-
-<table width="100%" cellpadding="0" cellspacing="0" border="0">
-  <tr><td colspan="4" height="5"></td></tr>
-  <tr align="right">
-   <td><input type=image value="add" img src="../img/1494942925_add_group.png" OnClick="javascript:location.href='add_address.jsp'" width="50" height="50"></td>
-  </tr>
-</table>
 
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr height="5"><td width="5"></td></tr>
@@ -148,7 +137,7 @@ catch(SQLException e) {
 	<form name=writeform method=post action="address_searched.jsp" >
 	<tr>
 		<td>
-		<table style="margin-left: auto; margin-right: auto;">
+		<table style="margin-left: auto; ">
 			<tr>
 				<td align="center"><select name="object">
 					<option value="name" selected="selected">name</option>
@@ -156,10 +145,12 @@ catch(SQLException e) {
 				</select><input name="keyword" size="75%" maxlength="100"></td>
 				<td align="center"><input type="image" img src="../img/1495006158_Searchicons-search-people2.png" value="search" width=30 height=30 OnClick="javascript:writeCheck()"></td>
 			</tr>
-		</table>
+		</table>		
 		</td>
 	</tr>
 	</form>
+	<td align="center"><input type=button value="add"  OnClick="javascript:location.href='add_address.jsp'" ></td>
+	
 </table>
 
 

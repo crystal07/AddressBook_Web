@@ -15,6 +15,11 @@ function writeCheck() {
 		form.phone.focus();
 		return;
 	}
+	if (isNaN(form.phone.value)) {
+		alert("input number by using number only");
+		form.phone.focus();
+		return;
+	}
 	form.submit();
 }
 </script>

@@ -149,8 +149,8 @@ catch(SQLException e) {
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr><td colspan="4" height="5"></td></tr>
   <tr align="center">
-   <td><input type=button value="add" OnClick="javascript:location.href='call.jsp'"></td>
-   <td><input type=button value="delete" OnClick="window.location='delete_selected_address.jsp?index=<%=index%>"></td>
+   <td><input type=button value="add" OnClick="javascript:location.href='input_call_number.jsp'"></td>
+   <td><input type=button value="delete" OnClick="window.location='delete_all.jsp'"></td>
   </tr>
 </table>
 </body>

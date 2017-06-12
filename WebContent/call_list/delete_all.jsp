@@ -1,12 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ page import="java.sql.*" %>
-    
+    <%@page import="java.sql.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Message</title>
+<title>Delete</title>
 </head>
 <body>
 <%!
@@ -37,7 +36,7 @@
 		conn = DriverManager.getConnection(url,id,pass);
 		stmt = conn.createStatement();
 
-		sql = "DELETE FROM message";
+		sql = "DELETE FROM callList";
 		stmt.executeUpdate(sql);
 	
 		stmt.close();
@@ -45,13 +44,13 @@
 		%>
 		<script language="javascript">
 		self.window.alert("success");
-		location.href="message_list.jsp"; 
+		location.href="call_list.jsp"; 
 		</script>
 	<%	
 	}
 	catch (SQLException e) {
 		out.println( e.toString() );
 	}
-%>
+	%>
 </body>
 </html>

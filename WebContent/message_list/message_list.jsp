@@ -152,7 +152,7 @@ catch(SQLException e) {
   <tr><td colspan="4" height="5"></td></tr>
   <tr align="center">
    <td><input type=button value="add" OnClick="javascript:location.href='send_message.jsp?phone=null&received=-1'"></td>
-   <td><input type=button value="delete" OnClick="window.location='delete_selected_address.jsp?index=<%=index%>"></td>
+   <td><input type=button value="delete" OnClick="window.location='delete_all.jsp"></td>
   </tr>
 </table>
 </body>
