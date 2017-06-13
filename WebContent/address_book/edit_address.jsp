@@ -51,7 +51,7 @@ function writeCheck() {
  	Class.forName("com.mysql.jdbc.Driver");
 	String url = "jdbc:mysql://localhost:3306/address_book"; //아이피주소와 port와 DB명을 입력합니다.
 	String id = "root"; // DB USER명
-	String pass = "addressbook123"; // DB 비밀번호
+	String pass = "oodp"; // DB 비밀번호
 	conn = DriverManager.getConnection(url,id,pass);
 	
 	try {
